@@ -44,6 +44,30 @@
 				<a-entity camera position="0 5 5" look-controls="pointerLockEnabled: true">
 				</a-entity>
 			</a-entity> -->
+
+			<!-- HUD de coordenadas -->
+			<a-text id="positionText"
+					position="0 10 0"
+					value="Posição:"
+					color="black"
+					width="10"
+					rotation="90 0 0">
+			</a-text>
 		</a-scene>
+
+		<script>
+		// Atualizar a posição da câmera em tempo real
+		AFRAME.registerComponent('position-tracker', {
+			tick: function () {
+			var camera = document.querySelector('#player');
+			var position = camera.object3D.position;
+			var text = `Posição: x=${position.x.toFixed(2)} y=${position.y.toFixed(2)} z=${position.z.toFixed(2)}`;
+			document.querySelector('#positionText').setAttribute('value', text);
+			}
+		});
+
+		// Adiciona o componente ao player
+		document.querySelector('#player').setAttribute('position-tracker', '');
+		</script>
 	</body>
 </html>
