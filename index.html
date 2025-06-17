@@ -11,7 +11,10 @@
 			<!-- Assets (carregar os modelos 3D) -->
 			<a-assets>
 				<a-asset-item id="cidadeGLB" src="models/IC_cidade.glb"></a-asset-item>
-				<a-asset-item id="mapPointer" src="models/map_pointer_3d_icon.glb"></a-asset-item>
+				<a-asset-item
+					id="mapPointer"
+					src="models/map_pointer_3d_icon.glb"
+				></a-asset-item>
 				<a-asset-item id="textBombeiro" src="models/text_bombeiro.glb"></a-asset-item>
 				<a-asset-item id="textBoyner" src="models/text_boyner.glb"></a-asset-item>
 				<a-asset-item id="textEscola" src="models/text_Escola.glb"></a-asset-item>
@@ -19,9 +22,18 @@
 				<a-asset-item id="textHospital" src="models/text_hospital.glb"></a-asset-item>
 				<a-asset-item id="textHotel" src="models/text_Hotel.glb"></a-asset-item>
 				<a-asset-item id="textMercado" src="models/text_mercado.glb"></a-asset-item>
-				<a-asset-item id="textOrkqnCoffee" src="models/text_orkqn-coffee.glb"></a-asset-item>
-				<a-asset-item id="textPostoGasolina" src="models/text_posto_gasolina.glb"></a-asset-item>
-				<a-asset-item id="textPrefeitura" src="models/text_prefeitura.glb"></a-asset-item>
+				<a-asset-item
+					id="textOrkqnCoffee"
+					src="models/text_orkqn-coffee.glb"
+				></a-asset-item>
+				<a-asset-item
+					id="textPostoGasolina"
+					src="models/text_posto_gasolina.glb"
+				></a-asset-item>
+				<a-asset-item
+					id="textPrefeitura"
+					src="models/text_prefeitura.glb"
+				></a-asset-item>
 				<a-asset-item id="textSqCoffee" src="models/text_sq-coffee.glb"></a-asset-item>
 				<a-asset-item id="textStarbucks" src="models/text_Starbucks.glb"></a-asset-item>
 			</a-assets>
@@ -29,17 +41,24 @@
 			<!-- Modelo da Cidade -->
 			<a-entity gltf-model="#cidadeGLB" position="0 0 0" scale="1 1 1"></a-entity>
 
-			<a-entity gltf-model="#mapPointer" 
-						position="0 10 0" 
-						scale="0.3 0.3 0.3" 
-						rotation="0 0 0"
-                		animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-entity>
-			
-			<a-entity gltf-model="#mapPointer" 
-						position="10 10 0" 
-						scale="0.3 0.3 0.3" 
-						rotation="0 0 0"
-                		animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"></a-entity>
+			<!-- Posicionamento dos Map Pointers -->
+			<a-entity
+				gltf-model="#mapPointer"
+				position="16 8 5"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#mapPointer"
+				position="10 10 0"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<!-- Posicionamento das palavras -->
 
 			<!-- Luz ambiente -->
 			<a-entity light="type: ambient; color: #ffffff; intensity: 1.5"></a-entity>
@@ -56,7 +75,7 @@
 				position="0 2.8 5"
 				movement-controls="controls: gamepad,keyboard; speed: 0.1"
 			>
-				<a-camera
+				<a-camera id="camera"
 					wasd-controls="acceleration: 10"
 					look-controls="pointerLockEnabled: true"
 				></a-camera>
@@ -71,28 +90,32 @@
 			</a-entity> -->
 
 			<!-- HUD de coordenadas -->
-			<a-text id="positionText"
-					position="0 10 0"
-					value="Posição:"
-					color="black"
-					width="10"
-					rotation="90 0 0">
+			<a-text
+				id="positionText"
+				position="0 10 0"
+				value="Posição:"
+				color="black"
+				width="10"
+				rotation="90 0 0"
+			>
 			</a-text>
 		</a-scene>
 
 		<script>
-		// Atualizar a posição da câmera em tempo real
-		AFRAME.registerComponent('position-tracker', {
-			tick: function () {
-			var camera = document.querySelector('#player');
-			var position = camera.object3D.position;
-			var text = `Posição: x=${position.x.toFixed(2)} y=${position.y.toFixed(2)} z=${position.z.toFixed(2)}`;
-			document.querySelector('#positionText').setAttribute('value', text);
-			}
-		});
+			AFRAME.registerComponent("position-tracker", {
+				tick: function () {
+					var camera = document.querySelector("#camera");
+					var worldPosition = new THREE.Vector3();
+					camera.object3D.getWorldPosition(worldPosition);
 
-		// Adiciona o componente ao player
-		document.querySelector('#player').setAttribute('position-tracker', '');
+					var text = `Posição Mundial: x=${worldPosition.x.toFixed(
+						2
+					)} y=${worldPosition.y.toFixed(2)} z=${worldPosition.z.toFixed(2)}`;
+					document.querySelector("#positionText").setAttribute("value", text);
+				},
+			});
+
+			document.querySelector("#camera").setAttribute("position-tracker", "");
 		</script>
 	</body>
 </html>
