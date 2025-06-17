@@ -5,6 +5,7 @@
 		<title>Minha Cidade VR</title>
 		<script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.5.4/dist/aframe-extras.min.js"></script>
+		<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 	</head>
 	<body>
 		<a-scene>
@@ -15,12 +16,12 @@
 					id="mapPointer"
 					src="models/map_pointer_3d_icon.glb"
 				></a-asset-item>
-				<a-asset-item id="textBombeiro" src="models/text_bombeiro.glb"></a-asset-item>
+				<a-asset-item id="textBombeiro" src="models/txt_bombeiro.glb"></a-asset-item>
 				<a-asset-item id="textBoyner" src="models/text_boyner.glb"></a-asset-item>
-				<a-asset-item id="textEscola" src="models/text_Escola.glb"></a-asset-item>
+				<a-asset-item id="textEscola" src="models/txt_escola.glb"></a-asset-item>
 				<a-asset-item id="textFabrica" src="models/text_fabrica.glb"></a-asset-item>
-				<a-asset-item id="textHospital" src="models/text_hospital.glb"></a-asset-item>
-				<a-asset-item id="textHotel" src="models/text_Hotel.glb"></a-asset-item>
+				<a-asset-item id="textHospital" src="models/txt_hospital.glb"></a-asset-item>
+				<a-asset-item id="textHotel" src="models/txt_hotel.glb"></a-asset-item>
 				<a-asset-item id="textMercado" src="models/text_mercado.glb"></a-asset-item>
 				<a-asset-item
 					id="textOrkqnCoffee"
@@ -28,14 +29,14 @@
 				></a-asset-item>
 				<a-asset-item
 					id="textPostoGasolina"
-					src="models/text_posto_gasolina.glb"
+					src="models/txt_posto.glb"
 				></a-asset-item>
 				<a-asset-item
 					id="textPrefeitura"
 					src="models/text_prefeitura.glb"
 				></a-asset-item>
 				<a-asset-item id="textSqCoffee" src="models/text_sq-coffee.glb"></a-asset-item>
-				<a-asset-item id="textStarbucks" src="models/text_Starbucks.glb"></a-asset-item>
+				<a-asset-item id="textStarbucks" src="models/txt_starbucks.glb"></a-asset-item>
 			</a-assets>
 
 			<!-- Modelo da Cidade -->
@@ -52,13 +53,259 @@
 
 			<a-entity
 				gltf-model="#mapPointer"
-				position="10 10 0"
+				position="25.15 8 -14.1"
 				scale="0.3 0.3 0.3"
 				rotation="0 0 0"
 				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
 			></a-entity>
 
+			<a-entity
+				gltf-model="#mapPointer"
+				position="21.09 8 -7.13"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#mapPointer"
+				position="11.77 8 -12.88"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#mapPointer"
+				position="26.22 8 -6.47"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#mapPointer"
+				position="5.29 8 -1.94"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#mapPointer"
+				position="28.06 6 -11.75"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+			<a-entity
+				gltf-model="#mapPointer"
+				position="22.05 6 -0.74"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="15.54 6 -5.66"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="37.38 6 -5.74"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="20.99 6 20.63"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="22.43 6 -14.15"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="8.13 6 -2.30"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="29.83 6 -2.30"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="33.08 6 -11.15"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="21.26 6 5.63"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="25.32 6 0.28"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+			<a-entity
+				gltf-model="#mapPointer"
+				position="10.61 6 -1.98"
+				scale="0.3 0.3 0.3"
+				rotation="0 0 0"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+			></a-entity>
+
+
+
 			<!-- Posicionamento das palavras -->
+			<a-entity
+				gltf-model="#textBombeiro"
+				position="16 9 5"
+				scale="0.05 0.05 0.05"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textBombeiro"
+				position="25.15 9 -14.1"
+				scale="0.05 0.05 0.05"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textPostoGasolina"
+				position="21.09 9 -7.13"
+				scale="0.05 0.05 0.05"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textHotel"
+				position="11.77 9 -12.88"
+				scale="0.05 0.05 0.05"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textPrefeitura"
+				position="26.22 9 -6.47"
+				scale="0.05 0.05 0.05"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textMercado"
+				position="5.29 9 -1.94"
+				scale="0.05 0.05 0.05"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textOrkqnCoffee"
+				position="28.06 7 -11.75"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textOrkqnCoffee"
+				position="22.05 7 -0.74"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textBoyner"
+				position="15.54 7 -5.66"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textSqCoffee"
+				position="37.38 7 -5.74"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textFabrica"
+				position="20.99 7 20.63"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textHospital"
+				position="22.43 7 -14.15"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textHospital"
+				position="8.13 7 -2.30"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textHospital"
+				position="29.83 7 -2.30"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textEscola"
+				position="33.08 7 -11.15"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textEscola"
+				position="21.26 7 5.63"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textStarbucks"
+				position="25.32 7 0.28"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
+			<a-entity
+				gltf-model="#textStarbucks"
+				position="10.61 7 -1.98"
+				scale="0.02 0.02 0.02"
+				rotation="0 -90 0"
+				look-at="#camera"
+			></a-entity>
 
 			<!-- Luz ambiente -->
 			<a-entity light="type: ambient; color: #ffffff; intensity: 1.5"></a-entity>
